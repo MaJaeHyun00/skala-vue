@@ -7,9 +7,10 @@ Vue 기본 문법부터 외부 API 연동과 배포까지 학습한 과정을 �
 ## 배포 주소
 
 - Vercel: https://skala-vue-kappa-black.vercel.app
-- 날씨 대시보드: `/`
-- 실습 아카이브: `/practice`
-- 서비스 소개: `/about`
+- GitHub: https://github.com/MaJaeHyun00/skala-vue
+- 날씨 대시보드: /
+- 실습 아카이브: /practice
+- 서비스 소개: /about
 
 ## 프로젝트 소개
 
@@ -33,13 +34,11 @@ Vue 기본 문법부터 외부 API 연동과 배포까지 학습한 과정을 �
 
 수업 중 진행한 Code Challenge를 Day 1부터 Day 4까지 구분하여 보관했습니다. 각 실습을 라우터로 연결하여 결과를 다시 실행하고 확인할 수 있도록 구성했습니다.
 
-| 구분         | 주요 학습 내용                                  |
-| ------------ | ----------------------------------------------- |
-| Day 1        | Vue 반응성, 보간법, Directive                   |
-| Day 2        | ref, reactive, Event, v-model, computed, watch  |
-| Day 3        | Lifecycle, Props, Emits, Slot                   |
-| Day 4        | Pinia, Axios, Element Plus                      |
-| Hands-on 1~3 | Weather Mockup, Composition API, Component 분리 |
+- Day 1: Vue 반응성, 보간법, Directive
+- Day 2: ref, reactive, Event, v-model, computed, watch
+- Day 3: Lifecycle, Props, Emits, Slot
+- Day 4: Pinia, Axios, Element Plus
+- Hands-on 1~3: Weather Mockup, Composition API, Component 분리
 
 ## 기술 스택
 
@@ -59,7 +58,7 @@ Vue 기본 문법부터 외부 API 연동과 배포까지 학습한 과정을 �
 
 - 기본 날씨 데이터에 제주 지역 추가
 - 습도, 옷차림 추천, 우산 안내 추가
-- `WeatherAdvice` 컴포넌트 추가
+- WeatherAdvice 컴포넌트 추가
 - Pinia에 생활정보 표시 상태와 action 추가
 - OpenWeatherMap 5일 예보 연동
 - AirKorea PM2.5·PM10 데이터 연동
@@ -77,13 +76,13 @@ Vue 기본 문법부터 외부 API 연동과 배포까지 학습한 과정을 �
 
 #### 진행한 실습
 
-일반 JavaScript 변수와 `ref`의 차이를 비교하고, 보간법과 `v-html`, `v-text`, `v-bind`, `v-cloak`, `v-once` 등의 Directive를 실습했습니다. 속성, 클래스, 스타일을 데이터 상태에 따라 변경하는 방법도 확인했습니다.
+일반 JavaScript 변수와 ref의 차이를 비교하고, 보간법과 v-html, v-text, v-bind, v-cloak, v-once 등의 Directive를 실습했습니다. 속성, 클래스, 스타일을 데이터 상태에 따라 변경하는 방법도 확인했습니다.
 
 #### 배운 점
 
-일반 변수의 값이 바뀌는 것과 Vue 화면이 다시 그려지는 것은 다른 문제라는 것을 배웠습니다. 화면과 연결되는 값은 `ref`나 `reactive`를 이용해 반응형 상태로 선언해야 했습니다.
+일반 변수의 값이 바뀌는 것과 Vue 화면이 다시 그려지는 것은 다른 문제라는 것을 배웠습니다. 화면과 연결되는 값은 ref나 reactive를 이용해 반응형 상태로 선언해야 했습니다.
 
-`v-html`은 HTML을 직접 출력할 수 있어 편리하지만, 사용자 입력을 그대로 전달하면 XSS 문제가 발생할 수 있다는 점도 알게 되었습니다.
+v-html은 HTML을 직접 출력할 수 있어 편리하지만, 사용자 입력을 그대로 전달하면 XSS 문제가 발생할 수 있다는 점도 알게 되었습니다.
 
 #### 느낀 점
 
@@ -93,20 +92,20 @@ Vue 기본 문법부터 외부 API 연동과 배포까지 학습한 과정을 �
 
 - 문제: 일반 변수의 값은 증가하지만 화면 숫자가 바뀌지 않았습니다.
 - 원인: 일반 변수는 Vue의 반응성 시스템이 변경을 추적하지 않습니다.
-- 해결: 화면과 연결되는 값을 `ref`로 선언하고 JavaScript 영역에서는 `.value`로 변경했습니다.
+- 해결: 화면과 연결되는 값을 ref로 선언하고 JavaScript 영역에서는 .value로 변경했습니다.
 - 배운 점: 값이 변경됐다는 사실만으로 화면이 갱신되는 것이 아니라, Vue가 추적할 수 있는 상태여야 합니다.
 
 ### 2. Weather Mockup
 
 #### 진행한 실습
 
-Mock 데이터 배열을 만들고 `v-for`로 지역별 날씨 카드를 출력했습니다. `v-if`와 `v-else`를 이용해 기온별 배지를 표시하고, 입력·클릭 이벤트와 상세보기 알림을 구현했습니다.
+Mock 데이터 배열을 만들고 v-for로 지역별 날씨 카드를 출력했습니다. v-if와 v-else를 이용해 기온별 배지를 표시하고, 입력·클릭 이벤트와 상세보기 알림을 구현했습니다.
 
 기본 요구사항에 제주, 습도, 추천 옷차림, 우산 필요 여부를 추가했습니다.
 
 #### 배운 점
 
-반복되는 화면은 HTML을 여러 번 작성하기보다 데이터 배열을 기준으로 렌더링해야 유지보수가 쉽다는 것을 배웠습니다. `v-for`를 사용할 때 각 항목을 구분하는 고유한 `key`가 필요하다는 점도 확인했습니다.
+반복되는 화면은 HTML을 여러 번 작성하기보다 데이터 배열을 기준으로 렌더링해야 유지보수가 쉽다는 것을 배웠습니다. v-for를 사용할 때 각 항목을 구분하는 고유한 key가 필요하다는 점도 확인했습니다.
 
 #### 느낀 점
 
@@ -116,23 +115,23 @@ Mock 데이터 배열을 만들고 `v-for`로 지역별 날씨 카드를 출력�
 
 #### 진행한 실습
 
-`ref`, `reactive`, `computed`, `watch`, `watchEffect`를 이용해 반응형 상태와 파생 상태, 상태 변화 감지를 실습했습니다.
+ref, reactive, computed, watch, watchEffect를 이용해 반응형 상태와 파생 상태, 상태 변화 감지를 실습했습니다.
 
-날씨 과제에서는 검색어와 카드 목록을 반응형 상태로 만들고, `computed`를 이용해 검색 결과를 필터링했습니다. 선택된 도시와 검색어 변화는 `watch`와 `watchEffect`로 확인했습니다.
+날씨 과제에서는 검색어와 카드 목록을 반응형 상태로 만들고, computed를 이용해 검색 결과를 필터링했습니다. 선택된 도시와 검색어 변화는 watch와 watchEffect로 확인했습니다.
 
 #### 배운 점
 
-- `computed`: 기존 상태에서 계산되는 값을 표현할 때 사용
-- `watch`: 특정 값의 변경 전후를 확인하거나 부수 효과를 실행할 때 사용
-- `watchEffect`: 내부에서 참조한 반응형 값을 자동으로 감시할 때 사용
+- computed: 기존 상태에서 계산되는 값을 표현할 때 사용
+- watch: 특정 값의 변경 전후를 확인하거나 부수 효과를 실행할 때 사용
+- watchEffect: 내부에서 참조한 반응형 값을 자동으로 감시할 때 사용
 
-처음에는 `computed`와 `watch`가 비슷해 보였지만, 화면에 표시할 계산값과 상태 변경 후 실행할 작업의 목적이 다르다는 것을 알게 되었습니다.
+처음에는 computed와 watch가 비슷해 보였지만, 화면에 표시할 계산값과 상태 변경 후 실행할 작업의 목적이 다르다는 것을 알게 되었습니다.
 
 #### 트러블슈팅
 
 - 문제: 객체 전체를 감시할 때 이전 값과 현재 값이 동일하게 보였습니다.
 - 원인: 중첩 객체를 직접 감시하면 두 값이 같은 객체를 참조할 수 있습니다.
-- 해결: `() => state.price`처럼 필요한 속성만 감시해 실제 이전 값을 확인했습니다.
+- 해결: () => state.price처럼 필요한 속성만 감시해 실제 이전 값을 확인했습니다.
 - 배운 점: 감시 대상을 구체적으로 지정하면 불필요한 감시를 줄이고 변경 전후 값도 명확하게 다룰 수 있습니다.
 
 ### 4. Vue Component
@@ -143,11 +142,11 @@ Lifecycle Hook, Props, Emits, Default Slot, Named Slot, Scoped Slot을 실습했
 
 Weather Composition 파일에 모여 있던 기능은 다음 역할로 분리했습니다.
 
-- `WeatherParent`: 상태와 전체 흐름 관리
-- `BaseDashboardCard`: 공통 레이아웃 제공
-- `SearchBar`: 검색어 표시 및 입력 이벤트 전달
-- `WeatherCard`: 날씨 데이터 표시 및 선택 이벤트 전달
-- `WeatherAdvice`: 습도, 옷차림, 우산 정보 표시
+- WeatherParent: 상태와 전체 흐름 관리
+- BaseDashboardCard: 공통 레이아웃 제공
+- SearchBar: 검색어 표시 및 입력 이벤트 전달
+- WeatherCard: 날씨 데이터 표시 및 선택 이벤트 전달
+- WeatherAdvice: 습도, 옷차림, 우산 정보 표시
 
 #### 배운 점
 
@@ -163,7 +162,7 @@ Day 3 실습이 가장 이해하기 어려웠습니다. 특히 Props와 Emits의
 
 - 문제: 카드 내부 버튼을 누르면 카드 클릭 이벤트도 함께 실행됐습니다.
 - 원인: 버튼 클릭 이벤트가 상위 요소까지 전파됐습니다.
-- 해결: 상세보기 버튼에 `@click.stop`을 적용했습니다.
+- 해결: 상세보기 버튼에 @click.stop을 적용했습니다.
 - 배운 점: 컴포넌트 통신뿐 아니라 브라우저의 이벤트 버블링도 함께 고려해야 합니다.
 
 ### 5. Vue Router
@@ -172,26 +171,26 @@ Day 3 실습이 가장 이해하기 어려웠습니다. 특히 Props와 Emits의
 
 날씨 메인, 서비스 소개, 도시 상세, 실습 아카이브, Day별 실습, Not Found 페이지를 각각 라우트로 구성했습니다.
 
-상세 페이지에는 `/weather/:cityId` 동적 경로를 사용했고, 존재하지 않는 주소는 Catch-all Route로 처리했습니다. 메인 페이지를 제외한 페이지에는 지연 로딩을 적용했습니다.
+상세 페이지에는 /weather/:cityId 동적 경로를 사용했고, 존재하지 않는 주소는 Catch-all Route로 처리했습니다. 메인 페이지를 제외한 페이지에는 지연 로딩을 적용했습니다.
 
 #### 배운 점
 
-처음에는 `MainWeather`, `HomeView`, `WeatherHomeView` 중 하나만 사용할 수 있다고 생각했습니다. 하지만 라우터는 여러 View를 URL에 연결하는 역할이므로 기존 과제와 새로운 대시보드를 서로 다른 경로에서 함께 유지할 수 있었습니다.
+처음에는 MainWeather, HomeView, WeatherHomeView 중 하나만 사용할 수 있다고 생각했습니다. 하지만 라우터는 여러 View를 URL에 연결하는 역할이므로 기존 과제와 새로운 대시보드를 서로 다른 경로에서 함께 유지할 수 있었습니다.
 
-기존 Hands-on 1~3은 `/practice/weather`에 보관하고, 완성된 날씨 대시보드는 `/`에 배치했습니다.
+기존 Hands-on 1~3은 /practice/weather에 보관하고, 완성된 날씨 대시보드는 /에 배치했습니다.
 
 #### 트러블슈팅
 
-- 문제: 배포 환경에서 `/weather/city_01`을 직접 열거나 새로고침하면 페이지를 찾지 못할 수 있었습니다.
+- 문제: 배포 환경에서 /weather/city_01을 직접 열거나 새로고침하면 페이지를 찾지 못할 수 있었습니다.
 - 원인: Vue Router는 브라우저에서 경로를 처리하지만, 정적 호스팅 서버는 실제 파일 경로를 찾으려고 합니다.
-- 해결: `vercel.json`에 모든 경로를 `/index.html`로 연결하는 rewrite 규칙을 추가했습니다.
+- 해결: vercel.json에 모든 경로를 /index.html로 연결하는 rewrite 규칙을 추가했습니다.
 - 배운 점: SPA 라우터 설정과 서버의 경로 처리 설정은 별도로 필요합니다.
 
 ### 6. Pinia Store
 
 #### 진행한 실습
 
-Counter Store에서 state, getter, action의 역할을 확인했습니다. 이후 `configStore`를 만들어 날씨 대시보드의 온도 단위를 전역에서 관리했습니다.
+Counter Store에서 state, getter, action의 역할을 확인했습니다. 이후 configStore를 만들어 날씨 대시보드의 온도 단위를 전역에서 관리했습니다.
 
 추가로 생활정보 표시 여부, 버튼 문구를 계산하는 getter, 표시 여부를 변경하는 action을 구현했습니다.
 
@@ -223,11 +222,11 @@ Mock 데이터를 API 응답 전까지 보여주는 방식보다 Skeleton UI를 
 
 #### 트러블슈팅
 
-- Axios 설치 후 `fsevents` 관련 경고가 표시됐습니다. 설치 실패가 아니라 선택적 설치 스크립트 안내였고, `found 0 vulnerabilities`와 정상 종료 여부로 설치 성공을 판단했습니다.
-- 공공데이터포털의 인증키가 Encoding된 형태로 제공돼 요청에 문제가 생길 수 있어 `decodeURIComponent`로 처리했습니다.
-- AirKorea가 측정값 대신 `-`를 반환하는 경우 숫자 변환 결과가 잘못되지 않도록 `null`로 처리했습니다.
+- Axios 설치 후 fsevents 관련 경고가 표시됐습니다. 설치 실패가 아니라 선택적 설치 스크립트 안내였고, found 0 vulnerabilities와 정상 종료 여부로 설치 성공을 판단했습니다.
+- 공공데이터포털의 인증키가 Encoding된 형태로 제공돼 요청에 문제가 생길 수 있어 decodeURIComponent로 처리했습니다.
+- AirKorea가 측정값 대신 -를 반환하는 경우 숫자 변환 결과가 잘못되지 않도록 null로 처리했습니다.
 - 특정 시점에 측정값이 없거나 API 응답이 불안정한 경우 오류로 단정하지 않고 “집계 중” 안내를 표시했습니다.
-- OpenWeatherMap이 반환한 `온흐림` 같은 어색한 번역은 날씨 조건 코드를 직접 한글 상태로 매핑해 `흐림`, `구름 조금`, `비`처럼 표시했습니다.
+- OpenWeatherMap이 반환한 온흐림 같은 어색한 번역은 날씨 조건 코드를 직접 한글 상태로 매핑해 흐림, 구름 조금, 비처럼 표시했습니다.
 
 ### 8. Element Plus와 UI Library
 
@@ -237,11 +236,11 @@ Element Plus를 설치하고 회원가입 Form, 수량·평점 입력, 삭제 �
 
 날씨 서비스에는 다음 컴포넌트를 적용했습니다.
 
-- `el-tabs`: 현재 날씨·주간 예보·대기질 전환
-- `el-skeleton`: API 로딩 상태
-- `el-alert`: 대기질 측정값 없음 안내
-- `el-empty`: 도시 검색 결과 없음
-- `el-tooltip`: 새로고침 버튼 설명
+- el-tabs: 현재 날씨·주간 예보·대기질 전환
+- el-skeleton: API 로딩 상태
+- el-alert: 대기질 측정값 없음 안내
+- el-empty: 도시 검색 결과 없음
+- el-tooltip: 새로고침 버튼 설명
 
 #### 배운 점
 
@@ -257,42 +256,46 @@ UI Library와 사용자 정의 CSS는 둘 중 하나를 선택하는 관계가 �
 
 #### 진행한 실습
 
-ESLint에 엄격한 비교 연산자를 강제하는 `eqeqeq` 규칙을 추가하고, Prettier를 이용해 코드 형식을 정리했습니다.
+ESLint에 엄격한 비교 연산자를 강제하는 eqeqeq 규칙을 추가하고, Prettier를 이용해 코드 형식을 정리했습니다.
+.env.staging과 .env.production을 만들고 staging 빌드 스크립트를 추가했습니다. production과 staging 빌드를 확인한 뒤 Vercel에 배포했습니다.
+기존에는 Vercel CLI를 이용해 프로젝트를 직접 배포했습니다.
+이후 제출용 소스 코드 관리와 자동 배포를 위해 프로젝트 전체를 GitHub 저장소에 올리고, 기존 Vercel 프로젝트와 GitHub 저장소를 연결했습니다.
 
-`.env.staging`과 `.env.production`을 만들고 staging 빌드 스크립트를 추가했습니다. production과 staging 빌드를 확인한 뒤 Vercel에 배포했습니다.
+GitHub의 main 브랜치에 변경 사항을 push하면 Vercel이 자동으로 프로젝트를 빌드하고 Production 환경에 배포하도록 구성했습니다. 실제로 커밋을 push한 뒤 Vercel에서 Ready 상태와 main 브랜치 기반 배포가 생성되는 것을 확인했습니다.
 
 #### 트러블슈팅
 
-- `==` 비교문을 의도적으로 작성한 뒤 ESLint가 오류를 탐지하는 것을 확인했습니다.
-- 기존 `value == null` 코드는 `value === null || value === undefined` 형태로 변경했습니다.
+- == 비교문을 의도적으로 작성한 뒤 ESLint가 오류를 탐지하는 것을 확인했습니다.
+- 기존 value == null 코드는 value === null || value === undefined 형태로 변경했습니다.
 - Prettier가 파일을 변경하지 않아 확인해 보니 잘못 입력된 문자열과 불필요한 문자가 문법 분석을 막고 있었습니다. 문법 오류를 먼저 수정한 뒤 해당 파일에 Prettier를 다시 실행했습니다.
-- Vercel CLI에서 로그인 정보가 없어 배포가 중단됐고, 회원가입 후 `npx vercel login`으로 해결했습니다.
-- 로컬 `.env.local`은 Vercel에 자동 전달되지 않기 때문에 Vercel 프로젝트에 production 환경 변수를 등록하고 다시 배포했습니다.
-- Vercel 환경 변수는 기존 배포에 자동 반영되지 않아 `npx vercel --prod`로 재배포했습니다.
+- Vercel CLI에서 로그인 정보가 없어 배포가 중단됐고, 회원가입 후 npx vercel login으로 해결했습니다.
+- 로컬 .env.local은 Vercel에 자동 전달되지 않기 때문에 Vercel 프로젝트에 production 환경 변수를 등록하고 다시 배포했습니다.
+- Vercel 환경 변수는 기존 배포에 자동 반영되지 않아 npx vercel --prod로 재배포했습니다.
+- GitHub 저장소를 만든 직후 Vercel CLI로 연결을 시도했지만 연결에 실패했습니다. 원인은 Vercel GitHub App에 저장소 접근 권한이 없었기 때문이었습니다.
+- Vercel 프로젝트 설정에서 GitHub App을 설치하고 skala-vue 저장소만 선택해 권한을 부여한 뒤 연결했습니다. 이후 main 브랜치에 push하여 GitHub 기반 자동 배포가 정상 동작하는 것을 확인했습니다.
 
 #### 배운 점
 
 로컬에서 화면이 잘 보이는 것만으로 배포가 끝난 것이 아니었습니다. 코드 검사, 환경 변수, production 빌드, SPA 경로 설정, 호스팅 환경의 변수 등록까지 모두 배포 과정에 포함된다는 것을 배웠습니다.
-
-또한 `.env.local`은 Git에 키를 올리지 않게 해 주지만, `VITE_`로 시작하는 값은 브라우저 번들에 포함된다는 한계도 알게 되었습니다. 실제 서비스에서는 API 키를 서버에서만 사용하는 프록시 구조가 더 안전하다는 점을 이후 개선 과제로 남겼습니다.
+또한 .env.local은 Git에 키를 올리지 않게 해 주지만, VITE_로 시작하는 값은 브라우저 번들에 포함된다는 한계도 알게 되었습니다. 실제 서비스에서는 API 키를 서버에서만 사용하는 프록시 구조가 더 안전하다는 점을 이후 개선 과제로 남겼습니다.
+GitHub는 프로젝트의 소스 코드와 변경 이력을 관리하고, Vercel은 GitHub에 push된 코드를 자동으로 빌드해 서비스 주소에 반영한다는 역할 차이를 이해했습니다. 이전에는 배포를 별도의 마지막 작업으로 생각했지만, 이제는 코드 수정부터 커밋, push, 배포 확인까지 하나의 개발 흐름으로 관리할 수 있게 되었습니다.
 
 ## 프로젝트 구조
 
-```text
+text
 src/
 ├── components/
-│   ├── day1/                  # Vue 기본 문법과 Directive
-│   ├── day2/                  # 반응형 상태, Event, Form, Watch
-│   ├── day3/                  # Lifecycle, Props, Emits, Slot
-│   ├── day4/                  # Pinia, Axios, Element Plus
-│   └── HandsOn/               # Weather Mockup과 Component 과제
-├── views/                     # 라우터 페이지
-├── router/                    # 라우트 설정
-├── stores/                    # Pinia Store
-├── services/                  # OpenWeatherMap·AirKorea 요청
-├── utils/                     # 날씨 상태 변환
-└── assets/                    # 공통 스타일
-```
+│ ├── day1/ # Vue 기본 문법과 Directive
+│ ├── day2/ # 반응형 상태, Event, Form, Watch
+│ ├── day3/ # Lifecycle, Props, Emits, Slot
+│ ├── day4/ # Pinia, Axios, Element Plus
+│ └── HandsOn/ # Weather Mockup과 Component 과제
+├── views/ # 라우터 페이지
+├── router/ # 라우트 설정
+├── stores/ # Pinia Store
+├── services/ # OpenWeatherMap·AirKorea 요청
+├── utils/ # 날씨 상태 변환
+└── assets/ # 공통 스타일
 
 ## 실행 방법
 
@@ -304,14 +307,14 @@ npm install
 
 ### 2. 환경 변수 설정
 
-프로젝트 루트에 `.env.local` 파일을 생성합니다.
+프로젝트 루트에 .env.local 파일을 생성합니다.
 
 ```env
 VITE_OPENWEATHER_API_KEY=발급받은_OpenWeatherMap_키
 VITE_AIRKOREA_SERVICE_KEY=발급받은_공공데이터포털_키
 ```
 
-실제 키가 포함된 `.env.local`은 Git에 올리지 않습니다.
+실제 키가 포함된 .env.local은 Git에 올리지 않습니다.
 
 ### 3. 개발 서버 실행
 
